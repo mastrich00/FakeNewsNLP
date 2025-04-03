@@ -1,3 +1,4 @@
+# Importing libraries required for model training and utilities                                                               
 import sys
 import os
 import argparse
@@ -48,6 +49,7 @@ config = model_configs[choice]
 MODEL_NAME = config["name"]
 
 # === Dynamic import ===
+# Importing libraries required for model training and utilities
 import importlib
 model_module = importlib.import_module(f"src.models.{config['module']}")
 ModelClass = getattr(model_module, config["model_class"])
@@ -64,6 +66,7 @@ os.makedirs(ckpt_dir, exist_ok=True)
 os.makedirs(final_model_dir, exist_ok=True)
 
 # === Logging ===
+# Definition of the Tee: class                              
 class Tee:
     def __init__(self, *files):
         self.files = files
@@ -96,6 +99,7 @@ use_fast = False if "deberta" in MODEL_NAME else True
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=use_fast)
 
 # === Tokenization ===
+# Function to tokenize function                               
 def tokenize_function(examples):
     statements = [str(x) if pd.notnull(x) else "" for x in examples["cleaned_statement"]]
     justifications = [str(x) if pd.notnull(x) else "" for x in examples["cleaned_justification"]]
@@ -113,6 +117,7 @@ def tokenize_function(examples):
         result["token_type_ids_2"] = tok2["token_type_ids"]
     return result
 
+# Function to tokenize and filter                                 
 def tokenize_and_filter(dataset):
     dataset = dataset.map(tokenize_function, batched=True)
     keep_cols = list(tokenize_function(dataset[0]).keys())
@@ -133,6 +138,7 @@ if args.weighted:
     weights = {label: total / (num_classes * count) for label, count in label_counts.items()}
     class_weights = torch.tensor([weights[i] for i in range(num_classes)], dtype=torch.float).to(device)
 
+# Definition of the WeightedTrainer class                                         
     class WeightedTrainer(Trainer):
         def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
             labels = inputs.pop("labels")
@@ -146,6 +152,7 @@ else:
     TrainerClass = Trainer
 
 # === Save PyTorch model inside each checkpoint subfolder ===
+# Definition of the SaveModelInCheckpointCallback class                                                       
 class SaveModelInCheckpointCallback(TrainerCallback):
     def on_save(self, args, state, control, **kwargs):
         ckpt = os.path.join(args.output_dir, f"checkpoint-{state.global_step}")
