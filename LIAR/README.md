@@ -119,6 +119,12 @@ python src/train_all.py
 ```
 You'll be prompted to enter epochs and whether to use weighted training per model.
 
+### Stored models
+
+Finetuned models can be found in our Nextcloud share, because of big sizes:
+
+https://cloud.technikum-wien.at/s/t9PtKHKDbpk248r
+
 ---
 
 ## 🔁 Resume Training
