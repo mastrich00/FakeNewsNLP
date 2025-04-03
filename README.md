@@ -22,3 +22,9 @@ Each dataset is housed in its own subfolder within the repository, and you will 
 
 - **Python Version:** Python 3.12 is used for all datasets.
 - **Package Dependencies:** Note that package requirements may vary between datasets. Please refer to the individual README/requirement files in each dataset's subfolder for specific dependency instructions.
+
+## Finetuned Models
+
+Finetuned models can be found in our Nextcloud share, because of big sizes:
+
+https://cloud.technikum-wien.at/s/t9PtKHKDbpk248r
