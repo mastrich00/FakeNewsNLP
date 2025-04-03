@@ -31,3 +31,5 @@ The ISOT dataset consists of full-length news articles. Each article is labeled 
 
 - **Finetuned Models:**  
   Finetuned models are saved in the `./model` folder for further evaluation or deployment.
+
+  Use the code in loadModels.ipynb to load the trained models.
