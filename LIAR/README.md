@@ -119,12 +119,6 @@ python src/train_all.py
 ```
 You'll be prompted to enter epochs and whether to use weighted training per model.
 
-### Stored models
-
-Finetuned models can be found in our Nextcloud share, because of big sizes:
-
-https://cloud.technikum-wien.at/s/t9PtKHKDbpk248r
-
 ---
 
 ## 🔁 Resume Training
@@ -172,6 +166,10 @@ Jupyter notebooks inside `notebooks/` are used for:
 
 Inspired by the LIAR dataset (UCSB) and LIAR-PLUS extensions.
 GitHub source for LIAR-PLUS: https://github.com/Tariq60/LIAR-PLUS
+
+Mehta, D., Dwivedi, A., Patra, A., & Kumar, M. A. (2021). 
+A transformer-based architecture for fake news classification. Social Network Analysis and Mining, 11(1), 39. 
+https://doi.org/10.1007/s13278-021-00738-y
 
 ---
 
