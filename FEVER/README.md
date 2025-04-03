@@ -6,21 +6,21 @@ This folder contains the FEVER (Fact Extraction and VERification) dataset, locat
 
 ### **About the Dataset**
 
-- **Content:**
+- **Content:**  
   The FEVER dataset consists of short textual claims and corresponding verifications based on Wikipedia evidence. It is a **multi-class classification** problem with three possible labels:
   - **SUPPORTS**: The claim is supported by Wikipedia evidence.
   - **REFUTES**: The claim is contradicted by Wikipedia evidence.
   - **NOT ENOUGH INFO**: There is insufficient evidence to verify the claim.
 
-- **Used Model:**
+- **Used Model:**  
   DistilBERT, BERT, and RoBERTa are fine-tuned for classification on this dataset.
 
 ### **Setup & Execution**
 
-- **Python Version:**
+- **Python Version:**  
   Python 3.12 is used for this dataset.
 
-- **Dependencies:**
+- **Dependencies:**  
   This project primarily utilizes the `transformers` library. GPU acceleration is automatically utilized if available.
 
   Install the required packages with:
@@ -28,12 +28,10 @@ This folder contains the FEVER (Fact Extraction and VERification) dataset, locat
   pip install -r requirements.txt
   ```
 
-- **Running the Code:**
-  To execute the analysis and model training, simply open and run the `main.ipynb` notebook.
+- **Running the Code:**  
+  To execute the analysis and model training, simply open and run the `fever_dataset.ipynb` notebook.
 
-### **Fine-tuned Models & Saved Outputs**
-
-- **Fine-tuned Models & Tokenizers:**
+- **Fine-tuned Models & Tokenizers:**  
   - Models are stored in the `./saved_model/` directory using `save_pretrained()`.
   - Tokenizers are also stored in `./saved_model/`, ensuring compatibility when reloading models.
   - Structure:
@@ -41,12 +39,14 @@ This folder contains the FEVER (Fact Extraction and VERification) dataset, locat
     - `./saved_model/BERT/`
     - `./saved_model/RoBERTa/`
 
-- **Training Checkpoints:**
-  - Intermediate training checkpoints are stored in the `./results/` directory.
+- **Training Checkpoints:**  
+  - Intermediate training checkpoints are stored in the `./results/` directory.  
   - Each model has its own results folder based on the `output_dir` parameter in `TrainingArguments`.
   - Checkpoints allow resuming training and tracking progress over epochs.
   - Structure:
     - `./results/distilBERT/`
     - `./results/BERT/`
     - `./results/RoBERTa/`
+
+
 
