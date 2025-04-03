@@ -1,0 +1,31 @@
+# Core Requirements
+accelerate
+datasets
+dill
+filelock
+fsspec
+huggingface-hub
+matplotlib
+nltk
+numpy
+pandas
+protobuf
+pyarrow
+regex
+requests
+scikit-learn
+scipy
+seaborn
+sentencepiece
+tiktoken
+tokenizers
+torch==2.6.0+cu118
+torchaudio==2.6.0+cu118
+torchvision==0.21.0+cu118
+tqdm
+transformers
+xxhash
+
+# Development / Notebook Requirements
+jupyter
+notebook
