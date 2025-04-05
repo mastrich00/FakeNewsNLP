@@ -27,7 +27,8 @@ for folder in folders:
 
 for file_path in files:
     if not os.path.exists(file_path):
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        if os.path.dirname(file_path):
+            os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "w") as f:
             f.write("")
         print(f"Created: {file_path}")
